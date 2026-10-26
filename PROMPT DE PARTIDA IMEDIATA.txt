@@ -1,0 +1,34 @@
+INICIAR PROJETO DO ZERO SEGUINDO O PADRÃO OFICIAL "ARQUITETURA_CATALOGOS.md" (PYTHON XREF + OFFLINE-FIRST + UI-UX-PRO-MAX)
+
+Atue como Arquiteto de Software Sênior, Especialista em Engenharia Reversa de Catálogos Automotivos (Python PyMuPDF XREF/SMask) e Principal UI/UX Designer.
+Sua missão é construir um sistema completo de Catálogo Inteligente de Balcão Offline-First (PWA + Tauri v2 Windows) para os catálogos PDF presentes nesta pasta, cumprindo 100% das regras, fases e dos 9 Quality Gates definidos no arquivo `ARQUITETURA_CATALOGOS.md`.
+
+Execute o projeto seguindo rigorosamente esta sequência de fases com validação real no terminal:
+
+PASSO 1 — AUDITORIA DOS PDFs E INSTALAÇÃO AUTOMÁTICA DO DESIGN SYSTEM (`ui-ux-pro-max`):
+1. Inspecione a pasta atual, identifique todos os arquivos `.pdf` presentes, verifique o ambiente (Python, PyMuPDF, Pillow, Bun, Rust/Cargo, Git) e inicialize o Git com `.gitignore`.
+2. Instale automaticamente a skill de UI/UX no projeto executando:
+   `bunx skills add [https://github.com/nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) --skill ui-ux-pro-max`
+3. Execute os scripts de consulta da skill `ui-ux-pro-max` para definir os tokens visuais de máxima legibilidade para balcão (Daylight Counter Mode `#F8FAFC` / `#FFFFFF` + Dark Mode alternável, tipografia de alto contraste para SKUs/OEMs e 100% ícones vetoriais SVG Lucide sem usar emojis).
+
+PASSO 2 — ENGENHARIA REVERSA EM PYTHON (`scripts/extract_catalogs_xref.py`):
+1. Inspecione a estrutura de páginas, colunas, fontes e objetos `XREF` de cada PDF na pasta.
+2. Construa e execute `scripts/extract_catalogs_xref.py` usando `PyMuPDF` (`fitz`) e `Pillow`:
+   - Filtre logos/selos/marcas d'água repetidos (> 3 páginas) ou menores que 45x45px.
+   - Extraia as imagens originais via `XREF`, recomponha máscaras `SMask` sobre fundo branco puro (`#FFFFFF`), converta `CMYK -> sRGB`, costure imagens fatiadas (`stitching`) e limpe fundos coloridos de tabelas nos cantos via `floodfill`.
+   - Salve as imagens em `public/catalog-images/{marca}/{sku}.webp` (`quality=92`).
+   - Extraia 100% dos produtos, códigos OEM (com expansão de barras e homóglifos), aplicações veiculares estruturadas (anos, motores, versões), especificações técnicas e consolide produtos repetidos em múltiplas páginas.
+   - Calcule os 4 tipos de vínculos (`EQUIVALENCIA_DIRETA`, `COMPATIBILIDADE_ACOPLAMENTO`, `COMPOSICAO_KIT`, `VARIANTE_PRODUTO`) e gere `src/data/catalog-master-seed.json`.
+   - Audite automaticamente as imagens geradas garantindo 0 imagens pretas e cobertura completa.
+
+PASSO 3 — APLICAÇÃO DE BALCÃO COMPLETA (BUN + VITE + TS STRICT + TAILWIND + INDEXEDDB + TAURI 2):
+1. Construa a camada IndexedDB versionada com auto-seed instantâneo a partir de `catalog-master-seed.json` e isolamento inviolável de `storeInventoryData` (preços em centavos inteiros via `BigInt`, código interno e localização).
+2. Implemente o Motor de Busca Sub-50ms com ranking de 4 níveis, filtros dinâmicos combinados e o Painel dos 4 Tipos de Vínculos com Sugestão Transitiva Cross-Brand.
+3. Implemente a Galeria Híbrida Multi-Ângulos (`staticImageUrls` + `imageAssetIds` manuais via Drag & Drop, múltiplos arquivos e `Ctrl+V` + `removedStaticUrls` + Lightbox com zoom de 50% a 400% e carrossel de ângulos).
+4. Implemente o Modal Completo de Gestão Manual (`product-form-modal.ts`: Criar, Editar todos os dados/OEMs/aplicações/fotos/vínculos, Duplicar Peça, Lixeira e Exclusão Definitiva).
+5. Implemente a Barra Superior limpa com o botão "Ocultar / Mostrar Preços (Modo Cliente)", botão "Copiar p/ WhatsApp" nos cards, alternador de Tema Claro/Escuro e painel de Gestão com Backup/Restore (`SHA-256`), Importação/Exportação CSV de estoque e Trilha de Auditoria (`auditLogs`).
+6. Configure o PWA (`manifest.webmanifest` + `sw.js` Cache-First) e o Tauri v2 (`src-tauri/` com ícones nativos válidos).
+
+PASSO 4 — VALIDAÇÃO DOS 9 QUALITY GATES E ENTREGA:
+- Execute todas as suítes de testes automatizados (`bun test`), verificação estrita de tipos (`bun x tsc --noEmit`) e build de produção (`bun run build`), comprovando que todos os módulos estão integrados no `src/main.ts` e que o benchmark de 1.000+ produtos roda em `< 50ms`.
+- Faça o commit de toda a estrutura e apresente o Relatório Final de Engenharia com as métricas reais extraídas dos PDFs e o status dos 9 Quality Gates.

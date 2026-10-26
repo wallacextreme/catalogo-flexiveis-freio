@@ -1,0 +1,21 @@
+[package]
+name = "flexiveis-freio-pro"
+version = "1.0.0"
+description = "Catalogo Inteligente de Balcao para Flexiveis de Freio (TRW e Norflex)"
+authors = ["Flexiveis Pro"]
+license = "MIT"
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "flexiveis_freio_pro_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.2", features = [] }
