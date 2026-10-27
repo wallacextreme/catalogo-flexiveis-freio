@@ -50,8 +50,9 @@ export function searchProducts(
   const rawQuery = filter.query.trim();
   const canonicalQuery = normalizeCanonical(rawQuery);
   const normalizedQuery = normalizeText(rawQuery);
-  const queryWords = normalizedQuery.split(/\s+/).filter(Boolean);
+  const queryWords = normalizedQuery.split(/[\s,;/]+/).filter(Boolean);
   const searchYear = extractYearFromQuery(rawQuery);
+  const nonYearWords = queryWords.filter((w) => !/^\d{2,4}$/.test(w));
 
   const results: SearchMatchResult[] = [];
 
@@ -122,7 +123,7 @@ export function searchProducts(
       tier = 1;
       matchField = 'SKU Prefixo';
       matchSnippet = product.sku;
-    } else if (canonicalSku.includes(canonicalQuery)) {
+    } else if (canonicalQuery.length >= 2 && canonicalSku.includes(canonicalQuery)) {
       score += 8000;
       tier = 1;
       matchField = 'SKU Parcial';
@@ -139,7 +140,13 @@ export function searchProducts(
           matchField = 'Código OEM Exato';
           matchSnippet = oem;
           break;
-        } else if (canonicalOem.includes(canonicalQuery) && canonicalQuery.length >= 4) {
+        } else if (canonicalOem.startsWith(canonicalQuery) && canonicalQuery.length >= 2) {
+          score += 7000;
+          if (tier > 2) tier = 2;
+          matchField = 'Código OEM Prefixo';
+          matchSnippet = oem;
+          break;
+        } else if (canonicalOem.includes(canonicalQuery) && canonicalQuery.length >= 3) {
           score += 6000;
           if (tier > 2) tier = 2;
           matchField = 'Código OEM';
@@ -152,52 +159,67 @@ export function searchProducts(
     // TIER 3: Vehicle Applications (Make, Model, Year)
     if (tier > 2) {
       let matchedApp = false;
-      for (const app of product.applications) {
-        const normMake = normalizeText(app.make);
-        const normModel = normalizeText(app.models);
-        const appText = `${normMake} ${normModel}`;
+      const textToMatch = normalizeText(`${product.name} ${(product.makes || []).join(' ')}`);
 
-        const allWordsMatch = queryWords.every((word) => appText.includes(word));
-        if (allWordsMatch) {
-          score += 4000;
-          tier = 3;
-          matchField = 'Aplicação Veicular';
-          matchSnippet = `${app.make} ${app.models} (${app.years})`;
-          matchedApp = true;
-          break;
+      if (nonYearWords.length > 0) {
+        for (const app of product.applications) {
+          const normMake = normalizeText(app.make);
+          const normModel = normalizeText(app.models);
+          const normYears = normalizeText(app.years || '');
+          const appCombined = `${normMake} ${normModel} ${normYears} ${textToMatch}`;
+
+          // Words matching
+          const wordsMatch = nonYearWords.every((word) => appCombined.includes(word));
+
+          if (wordsMatch) {
+            let yearMatches = true;
+            if (searchYear) {
+              const twoDigitYear = String(searchYear % 100).padStart(2, '0');
+              const hasYearInApp = normYears.includes(String(searchYear)) || normYears.includes(twoDigitYear);
+              const hasYearInRange = product.yearRanges && product.yearRanges.some(
+                ([start, end]) => searchYear >= start && searchYear <= end
+              );
+              yearMatches = hasYearInApp || !!hasYearInRange;
+            }
+
+            if (yearMatches) {
+              score += searchYear ? 9000 : 5000;
+              tier = 3;
+              matchField = 'Aplicação Veicular';
+              matchSnippet = `${app.make} ${app.models}${app.years ? ` (${app.years})` : ''}`.trim();
+              matchedApp = true;
+              break;
+            }
+          }
         }
-      }
-
-      // Year Interval Verification
-      if (searchYear && product.yearRanges && product.yearRanges.length > 0) {
+      } else if (searchYear && product.yearRanges && product.yearRanges.length > 0) {
         const inYearRange = product.yearRanges.some(
           ([start, end]) => searchYear >= start && searchYear <= end
         );
         if (inYearRange) {
-          score += matchedApp ? 2500 : 1500;
-          if (!matchedApp && tier > 3) {
-            tier = 3;
-            matchField = 'Ano Compatível';
-            matchSnippet = `Ano ${searchYear}`;
-          }
+          score += 2500;
+          tier = 3;
+          matchField = 'Ano Compatível';
+          matchSnippet = `Ano ${searchYear}`;
         }
       }
     }
 
     // TIER 4: Specs, Lengths, Stock Location, General Text
-    if (score === 0) {
+    if (score === 0 && rawQuery.length >= 2) {
       const prodText = normalizeText(
         `${product.name} ${product.category} ${product.specs.position} ${product.specs.lengthMm}mm ${product.storeInventoryData.stockLocation} ${product.storeInventoryData.internalCode}`
       );
 
       const wordsHit = queryWords.filter((w) => prodText.includes(w)).length;
+
       if (wordsHit === queryWords.length) {
         score += 1500;
         tier = 4;
         matchField = 'Especificação / Medida';
-        matchSnippet = `${product.specs.position} ${product.specs.lengthMm}mm`;
-      } else if (wordsHit > 0) {
-        score += wordsHit * 300;
+        matchSnippet = `${product.specs.position || ''} ${product.specs.lengthMm ? `${product.specs.lengthMm}mm` : ''}`.trim();
+      } else if (wordsHit > 0 && queryWords.length > 1) {
+        score += wordsHit * 200;
         tier = 4;
         matchField = 'Descrição';
       }

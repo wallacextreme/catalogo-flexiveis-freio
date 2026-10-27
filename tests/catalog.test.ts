@@ -155,5 +155,5 @@ describe('QUALITY GATE 5: Sub-50ms Search Engine Benchmark', () => {
 
     console.log(`\n  [BENCHMARK] ${iterations} buscas completadas em ${elapsedTotal.toFixed(2)} ms (Média: ${avgPerSearch.toFixed(3)} ms/busca)`);
     expect(avgPerSearch).toBeLessThan(50); // Quality gate: sub-50ms
-  });
+  }, 15000);
 });

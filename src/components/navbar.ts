@@ -1,6 +1,7 @@
 import { icon } from './icons.ts';
 
 export interface NavbarProps {
+  query?: string;
   totalCount: number;
   filteredCount: number;
   trashCount: number;
@@ -18,6 +19,7 @@ export interface NavbarProps {
 
 export function renderNavbar(props: NavbarProps): string {
   const {
+    query = '',
     totalCount,
     filteredCount,
     trashCount,
@@ -60,6 +62,7 @@ export function renderNavbar(props: NavbarProps): string {
               <input
                 id="global-search-input"
                 type="text"
+                value="${query}"
                 placeholder="Buscar SKU, código OEM, carro, ano (ex: 3036, RPFX00480, Siena 2012, 540mm)..."
                 class="w-full pl-10 pr-12 py-2 text-sm bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-600 dark:focus:ring-red-500 text-slate-900 dark:text-white placeholder-slate-400 transition-all font-mono-code"
                 autocomplete="off"
@@ -159,9 +162,9 @@ export function renderNavbar(props: NavbarProps): string {
       <div class="bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800/80 px-4 py-1 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between">
         <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <span>Produtos: <strong class="text-slate-800 dark:text-slate-200">${filteredCount}</strong> de ${totalCount}</span>
+            <span>Produtos: <strong id="navbar-filtered-count" class="text-slate-800 dark:text-slate-200">${filteredCount}</strong> de ${totalCount}</span>
             <span class="hidden sm:inline">•</span>
-            <span class="hidden sm:inline">Latência: <strong class="text-emerald-600 dark:text-emerald-400">0 ms (Offline-First)</strong></span>
+            <span class="hidden sm:inline">Latência: <strong id="navbar-latency" class="text-emerald-600 dark:text-emerald-400">0 ms (Offline-First)</strong></span>
           </div>
           <div class="flex items-center gap-3">
             <span class="font-mono text-[11px] bg-slate-200/70 dark:bg-slate-800 px-1.5 py-0.5 rounded">IndexedDB Dexie 4.0</span>

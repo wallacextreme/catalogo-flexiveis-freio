@@ -58,6 +58,16 @@ let isDarkMode = localStorage.getItem('theme') === 'dark' || (!localStorage.getI
 // Modal states
 let activeDetailProduct: Product | null = null;
 let activeCustomImages: CustomImageAsset[] = [];
+let displayedProductsLimit = 48;
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
 
 let isFormModalOpen = false;
 let formEditProduct: Product | null = null;
@@ -157,11 +167,18 @@ function renderApp() {
   const appContainer = document.getElementById('app');
   if (!appContainer) return;
 
+  // Preserve search input focus and selection range across full re-renders
+  const searchInput = document.getElementById('global-search-input') as HTMLInputElement | null;
+  const wasInputFocused = document.activeElement === searchInput;
+  const selStart = searchInput?.selectionStart ?? null;
+  const selEnd = searchInput?.selectionEnd ?? null;
+
   const t0 = performance.now();
   const searchResults = searchProducts(allProducts, filterState);
   const searchDurationMs = (performance.now() - t0).toFixed(1);
 
   const navbarHtml = renderNavbar({
+    query: filterState.query,
     totalCount: allProducts.length,
     filteredCount: searchResults.length,
     trashCount: trashProductsList.length,
@@ -170,7 +187,8 @@ function renderApp() {
     isInstallable: !!deferredInstallPrompt,
     onSearchChange: (q) => {
       filterState.query = q;
-      renderApp();
+      displayedProductsLimit = 48;
+      updateSearchListOnly();
     },
     onToggleCustomerMode: () => {
       isCustomerMode = !isCustomerMode;
@@ -206,6 +224,7 @@ function renderApp() {
     totalActiveCount: allProducts.length,
     onFilterChange: (newFilters) => {
       filterState = { ...filterState, ...newFilters };
+      displayedProductsLimit = 48;
       renderApp();
     },
     onResetFilters: () => {
@@ -219,6 +238,7 @@ function renderApp() {
         launchesOnly: false,
         sortBy: 'relevance',
       };
+      displayedProductsLimit = 48;
       renderApp();
     },
   });
@@ -226,11 +246,25 @@ function renderApp() {
   // Product cards
   let productsGridHtml = '';
   if (searchResults.length > 0) {
+    const itemsToRender = searchResults.slice(0, displayedProductsLimit);
     productsGridHtml = `
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
-        ${searchResults.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {}, onStockAdjust: () => {} })).join('')}
+        ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {}, onStockAdjust: () => {} })).join('')}
       </div>
     `;
+    if (searchResults.length > displayedProductsLimit) {
+      productsGridHtml += `
+        <div class="pt-6 pb-2 text-center">
+          <button
+            id="btn-load-more"
+            type="button"
+            class="px-5 py-2.5 text-xs font-bold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors shadow-sm cursor-pointer"
+          >
+            Exibindo ${displayedProductsLimit} de ${searchResults.length} — Carregar mais peças (+${Math.min(48, searchResults.length - displayedProductsLimit)})
+          </button>
+        </div>
+      `;
+    }
   } else {
     productsGridHtml = `
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-12 text-center space-y-3">
@@ -239,7 +273,7 @@ function renderApp() {
         </div>
         <h3 class="text-base font-bold text-slate-900 dark:text-white">Nenhum flexível encontrado</h3>
         <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-          Tente buscar apenas o número (ex: 3036), o código TRW (ex: RPFX00480) ou limpe os filtros laterais.
+          Tente buscar o número do flexível (ex: 3036, 1005, 2129), código TRW (ex: RPFX00480) ou modelo do carro e ano (ex: Siena 2012, Palio, Gol).
         </p>
       </div>
     `;
@@ -314,12 +348,12 @@ function renderApp() {
           <section class="flex-1 w-full space-y-4">
             
             <!-- Search Results Meta Bar -->
-            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
+            <div id="search-meta-container" class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
               <div class="flex items-center gap-2">
-                <span>Exibindo <strong>${searchResults.length}</strong> de ${allProducts.length} peças</span>
+                <span>Exibindo <strong>${Math.min(searchResults.length, displayedProductsLimit)}</strong> de ${searchResults.length} peças encontradas</span>
                 ${
                   filterState.query
-                    ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${filterState.query}"</span>`
+                    ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${escapeHtml(filterState.query)}"</span>`
                     : ''
                 }
               </div>
@@ -328,7 +362,9 @@ function renderApp() {
               </div>
             </div>
 
-            ${productsGridHtml}
+            <div id="products-grid-container">
+              ${productsGridHtml}
+            </div>
           </section>
         </div>
       </main>
@@ -339,10 +375,81 @@ function renderApp() {
     </div>
   `;
 
-  // Restore search input value & focus if needed
-  const searchInput = document.getElementById('global-search-input') as HTMLInputElement | null;
-  if (searchInput && searchInput.value !== filterState.query) {
-    searchInput.value = filterState.query;
+  // Restore search input focus & cursor selection position if it had focus
+  if (wasInputFocused) {
+    const newSearchInput = document.getElementById('global-search-input') as HTMLInputElement | null;
+    if (newSearchInput) {
+      newSearchInput.focus();
+      if (selStart !== null && selEnd !== null) {
+        newSearchInput.setSelectionRange(selStart, selEnd);
+      }
+    }
+  }
+}
+
+function updateSearchListOnly() {
+  const t0 = performance.now();
+  const searchResults = searchProducts(allProducts, filterState);
+  const searchDurationMs = (performance.now() - t0).toFixed(1);
+
+  const navCount = document.getElementById('navbar-filtered-count');
+  const navLat = document.getElementById('navbar-latency');
+  if (navCount) navCount.textContent = String(searchResults.length);
+  if (navLat) navLat.textContent = `${searchDurationMs} ms (Sub-50ms)`;
+
+  const metaContainer = document.getElementById('search-meta-container');
+  if (metaContainer) {
+    metaContainer.innerHTML = `
+      <div class="flex items-center gap-2">
+        <span>Exibindo <strong>${Math.min(searchResults.length, displayedProductsLimit)}</strong> de ${searchResults.length} peças encontradas</span>
+        ${
+          filterState.query
+            ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${escapeHtml(filterState.query)}"</span>`
+            : ''
+        }
+      </div>
+      <div>
+        <span>Latência de busca: <strong class="text-emerald-600 dark:text-emerald-400">${searchDurationMs} ms</strong></span>
+      </div>
+    `;
+  }
+
+  const gridContainer = document.getElementById('products-grid-container');
+  if (gridContainer) {
+    if (searchResults.length > 0) {
+      const itemsToRender = searchResults.slice(0, displayedProductsLimit);
+      let html = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
+          ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {}, onStockAdjust: () => {} })).join('')}
+        </div>
+      `;
+      if (searchResults.length > displayedProductsLimit) {
+        html += `
+          <div class="pt-6 pb-2 text-center">
+            <button
+              id="btn-load-more"
+              type="button"
+              class="px-5 py-2.5 text-xs font-bold rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors shadow-sm cursor-pointer"
+            >
+              Exibindo ${displayedProductsLimit} de ${searchResults.length} — Carregar mais peças (+${Math.min(48, searchResults.length - displayedProductsLimit)})
+            </button>
+          </div>
+        `;
+      }
+      gridContainer.innerHTML = html;
+    } else {
+      gridContainer.innerHTML = `
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-12 text-center space-y-3">
+          <div class="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto text-slate-400">
+            ${icon('search', 'w-6 h-6')}
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Nenhum flexível encontrado</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+            Tente buscar o número do flexível (ex: 3036, 1005, 2129), código TRW (ex: RPFX00480) ou modelo do carro e ano (ex: Siena 2012, Palio, Gol).
+          </p>
+        </div>
+      `;
+    }
   }
 }
 
@@ -704,6 +811,12 @@ function setupGlobalListeners() {
       renderApp();
       return;
     }
+
+    if (closestBtn.id === 'btn-load-more') {
+      displayedProductsLimit += 48;
+      updateSearchListOnly();
+      return;
+    }
   });
 
   // Handle inputs & changes
@@ -713,7 +826,8 @@ function setupGlobalListeners() {
 
     if (target.id === 'global-search-input') {
       filterState.query = target.value;
-      renderApp();
+      displayedProductsLimit = 48;
+      updateSearchListOnly();
     }
   });
 
