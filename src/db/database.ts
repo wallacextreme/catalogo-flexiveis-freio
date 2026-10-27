@@ -27,7 +27,7 @@ export class BrakeHosesDatabase extends Dexie {
 
 export const db = new BrakeHosesDatabase();
 
-export const CURRENT_SEED_VERSION = 'v3_mercadocar_hd_images_2026';
+export const CURRENT_SEED_VERSION = 'v4_mercadocar_norflex_hd_2026';
 
 /**
  * Initializes the database and runs instant auto-seeding if empty or if seed version is updated.

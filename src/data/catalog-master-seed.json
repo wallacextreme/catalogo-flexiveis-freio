@@ -27088,8 +27088,8 @@
     }
   },
   {
-    "id": "norflex-30248",
-    "sku": "30248",
+    "id": "norflex-3024b",
+    "sku": "3024B",
     "brand": "Norflex",
     "name": "Flexível de Freio Norflex FORD CILINDRO MESTRE D/T 8021mm",
     "category": "Flexíveis de Freio Hidráulico",
@@ -27126,7 +27126,7 @@
       "norm": "SAE J 1401"
     },
     "images": [
-      "/catalog-images/norflex/30248.webp"
+      "/catalog-images/norflex/3024b.webp"
     ],
     "storeInventoryData": {
       "priceCents": 3250,
@@ -46793,8 +46793,8 @@
     }
   },
   {
-    "id": "norflex-70058",
-    "sku": "70058",
+    "id": "norflex-7005b",
+    "sku": "7005B",
     "brand": "Norflex",
     "name": "Flexível de Freio Norflex VOLKSWAGEN VWKOMBIDISCOWASILIA D/T 355mm",
     "category": "Flexíveis de Freio Hidráulico",
@@ -46829,7 +46829,7 @@
       "norm": "SAE J 1401"
     },
     "images": [
-      "/catalog-images/norflex/70058.webp"
+      "/catalog-images/norflex/7005b.webp"
     ],
     "storeInventoryData": {
       "priceCents": 3250,
@@ -57811,5 +57811,2660 @@
       ],
       "productVariants": []
     }
+  },
+  {
+    "id": "norflex-2010",
+    "sku": "2010",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Fiat Punto 2007 2010 510Mm Norflex 2010",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Dianteiro Fiat Punto 2007 2010 510Mm Norflex 2010",
+        "yearStart": 2007,
+        "yearEnd": 2010,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2010"
+      }
+    ],
+    "yearRanges": [
+      [
+        2007,
+        2010
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 510,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2010.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2010.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2010",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-2011",
+    "sku": "2011",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Fiat Tempra 1995 1999 Freio A Disco 450Mm Norflex 2011",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Traseiro Fiat Tempra 1995 1999 Freio A Disco 450Mm Norflex 2011",
+        "yearStart": 1995,
+        "yearEnd": 1999,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2011"
+      }
+    ],
+    "yearRanges": [
+      [
+        1995,
+        1999
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 450,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2011.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2011.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2011",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-9100",
+    "sku": "9100",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Jac J2 540Mm Norflex 9100",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "JAC"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "JAC",
+        "model": "Flexivel De Freio Dianteiro Jac J2 540Mm Norflex 9100",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 9100"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 540,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/9100.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/9100.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-9100",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-9006",
+    "sku": "9006",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Chery Qq 380Mm Norflex 9006",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHERY"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHERY",
+        "model": "Flexivel De Freio Dianteiro Chery Qq 380Mm Norflex 9006",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 9006"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 380,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/9006.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/9006.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-9006",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4816",
+    "sku": "4816",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Hyundai Ix35 350Mm Norflex 4816",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "HYUNDAI"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "HYUNDAI",
+        "model": "Flexivel De Freio Traseiro Hyundai Ix35 350Mm Norflex 4816",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4816"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 350,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4816.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4816.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4816",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4119",
+    "sku": "4119",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Chevrolet Gm Captiva Lado Direito Norflex 4119",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Dianteiro Chevrolet Gm Captiva Lado Direito Norflex 4119",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4119"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4119.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4119.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4119",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3055",
+    "sku": "3055",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford F 350F4000 Lado Esquerdo Norflex 3055",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford F 350F4000 Lado Esquerdo Norflex 3055",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3055"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3055.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3055.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3055",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-7060",
+    "sku": "7060",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Volkswagen Up 190Mm Norflex 7060",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "VOLKSWAGEN"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "VOLKSWAGEN",
+        "model": "Flexivel De Freio Traseiro Volkswagen Up 190Mm Norflex 7060",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 7060"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 190,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/7060.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/7060.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-7060",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh86013",
+    "sku": "DH86013",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Citroen Xsara Picasso Norflex Dh86013",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Citroen Xsara Picasso Norflex Dh86013",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH86013"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh86013.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh86013.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH86013",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh4542",
+    "sku": "DH4542",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Chevrolet Gm D20 Norflex Dh4542",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Chevrolet Gm D20 Norflex Dh4542",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH4542"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh4542.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh4542.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH4542",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3004",
+    "sku": "3004",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Norflex 3004",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel De Freio Traseiro Norflex 3004",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3004"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3004.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3004.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3004",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4046",
+    "sku": "4046",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Chevrolet Vectra 1993 1996 340Mm Norflex 4046",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Dianteiro Chevrolet Vectra 1993 1996 340Mm Norflex 4046",
+        "yearStart": 1993,
+        "yearEnd": 1996,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4046"
+      }
+    ],
+    "yearRanges": [
+      [
+        1993,
+        1996
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 340,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4046.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4046.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4046",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4080",
+    "sku": "4080",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Chevrolet Vectra 1994 1996 Sem Abs 230Mm Norflex 4080",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Traseiro Chevrolet Vectra 1994 1996 Sem Abs 230Mm Norflex 4080",
+        "yearStart": 1994,
+        "yearEnd": 1996,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4080"
+      }
+    ],
+    "yearRanges": [
+      [
+        1994,
+        1996
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 230,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4080.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4080.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4080",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8243",
+    "sku": "8243",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Renault Captur 482Mm Norflex 8243",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "RENAULT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "RENAULT",
+        "model": "Flexivel De Freio Dianteiro Renault Captur 482Mm Norflex 8243",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8243"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 482,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8243.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8243.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8243",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh4587",
+    "sku": "DH4587",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Chevrolet Gm Vectra Norflex Dh4587",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Chevrolet Gm Vectra Norflex Dh4587",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH4587"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh4587.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh4587.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH4587",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-2012",
+    "sku": "2012",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Fiat Brava 1993 2003 250Mm Norflex 2012",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Traseiro Fiat Brava 1993 2003 250Mm Norflex 2012",
+        "yearStart": 1903,
+        "yearEnd": 1993,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2012"
+      }
+    ],
+    "yearRanges": [
+      [
+        1903,
+        1993
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 250,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2012.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2012.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2012",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8244",
+    "sku": "8244",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Renault Captur 210Mm Norflex 8244",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "RENAULT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "RENAULT",
+        "model": "Flexivel De Freio Traseiro Renault Captur 210Mm Norflex 8244",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8244"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 210,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8244.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8244.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8244",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8127",
+    "sku": "8127",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro 190Mm Norflex 8127",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel De Freio Traseiro 190Mm Norflex 8127",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8127"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 190,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8127.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8127.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8127",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-9103",
+    "sku": "9103",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Jac J3 Lado Esquerdo 540Mm Norflex 9103",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "JAC"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "JAC",
+        "model": "Flexivel De Freio Dianteiro Jac J3 Lado Esquerdo 540Mm Norflex 9103",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 9103"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 540,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/9103.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/9103.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-9103",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-9102",
+    "sku": "9102",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Jac J3 Lado Direito 540Mm Norflex 9102",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "JAC"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "JAC",
+        "model": "Flexivel De Freio Dianteiro Jac J3 Lado Direito 540Mm Norflex 9102",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 9102"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 540,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/9102.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/9102.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-9102",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8126",
+    "sku": "8126",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro 540Mm Norflex 8126",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel De Freio Dianteiro 540Mm Norflex 8126",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8126"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 540,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8126.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8126.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8126",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3135",
+    "sku": "3135",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Ranger Lado Direito 446Mm Norflex 3135",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Ranger Lado Direito 446Mm Norflex 3135",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3135"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 446,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3135.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3135.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3135",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4211",
+    "sku": "4211",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Honda Fit 2004 2008 Lado Direito 555Mm Norflex 4211",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "HONDA"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "Flexivel De Freio Dianteiro Honda Fit 2004 2008 Lado Direito 555Mm Norflex 4211",
+        "yearStart": 2004,
+        "yearEnd": 2008,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4211"
+      }
+    ],
+    "yearRanges": [
+      [
+        2004,
+        2008
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 555,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4211.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4211.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4211",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3133",
+    "sku": "3133",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Ranger Lado Esquerdo 446Mm Norflex 3133",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Ranger Lado Esquerdo 446Mm Norflex 3133",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3133"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 446,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3133.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3133.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3133",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8608",
+    "sku": "8608",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Troller T4 Lado Direito 420Mm Norflex 8608",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "TROLLER"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "TROLLER",
+        "model": "Flexivel De Freio Traseiro Troller T4 Lado Direito 420Mm Norflex 8608",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8608"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 420,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8608.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8608.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8608",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-7014",
+    "sku": "7014",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Volkswagen Kombi 1976 1998 370Mm Norflex 7014",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "VOLKSWAGEN"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "VOLKSWAGEN",
+        "model": "Flexivel De Freio Dianteiro Volkswagen Kombi 1976 1998 370Mm Norflex 7014",
+        "yearStart": 1976,
+        "yearEnd": 1998,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 7014"
+      }
+    ],
+    "yearRanges": [
+      [
+        1976,
+        1998
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 370,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/7014.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/7014.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-7014",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4209",
+    "sku": "4209",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Honda Fit 2003 2008 Lado Direito 300Mm Norflex 4209",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "HONDA"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "Flexivel De Freio Traseiro Honda Fit 2003 2008 Lado Direito 300Mm Norflex 4209",
+        "yearStart": 2003,
+        "yearEnd": 2008,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4209"
+      }
+    ],
+    "yearRanges": [
+      [
+        2003,
+        2008
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 300,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4209.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4209.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4209",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3134",
+    "sku": "3134",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Ranger Lado Esquerdo 446Mm Norflex 3134",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Ranger Lado Esquerdo 446Mm Norflex 3134",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3134"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 446,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3134.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3134.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3134",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-7015",
+    "sku": "7015",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Volkswagen Kombi 1975 1999 Lado Direito 295Mm Norflex 7015",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "VOLKSWAGEN"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "VOLKSWAGEN",
+        "model": "Flexivel De Freio Traseiro Volkswagen Kombi 1975 1999 Lado Direito 295Mm Norflex 7015",
+        "yearStart": 1975,
+        "yearEnd": 1999,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 7015"
+      }
+    ],
+    "yearRanges": [
+      [
+        1975,
+        1999
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 295,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/7015.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/7015.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-7015",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8607",
+    "sku": "8607",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Troller T4 Lado Esquerdo 420Mm Norflex 8607",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "TROLLER"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "TROLLER",
+        "model": "Flexivel De Freio Traseiro Troller T4 Lado Esquerdo 420Mm Norflex 8607",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8607"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 420,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8607.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8607.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8607",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3132",
+    "sku": "3132",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Ranger Lado Direito 446Mm Norflex 3132",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Ranger Lado Direito 446Mm Norflex 3132",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3132"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 446,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3132.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3132.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3132",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-2008",
+    "sku": "2008",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Fiat Palio 1996 2016 500Mm Norflex 2008",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Dianteiro Fiat Palio 1996 2016 500Mm Norflex 2008",
+        "yearStart": 1996,
+        "yearEnd": 2016,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2008"
+      }
+    ],
+    "yearRanges": [
+      [
+        1996,
+        2016
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 500,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2008.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2008.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2008",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8709",
+    "sku": "8709",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Nissan Marchversa 310Mm Norflex 8709",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "NISSAN"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "NISSAN",
+        "model": "Flexivel De Freio Traseiro Nissan Marchversa 310Mm Norflex 8709",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8709"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 310,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8709.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8709.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8709",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4206",
+    "sku": "4206",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Honda Civic 1991 1995 Lado Direito 690Mm Norflex 4206",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "HONDA"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "Flexivel De Freio Dianteiro Honda Civic 1991 1995 Lado Direito 690Mm Norflex 4206",
+        "yearStart": 1991,
+        "yearEnd": 1995,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4206"
+      }
+    ],
+    "yearRanges": [
+      [
+        1991,
+        1995
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 690,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4206.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4206.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4206",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3051",
+    "sku": "3051",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Escort 1997 2002 Lado Esquerdo 400Mm Norflex 3051",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Escort 1997 2002 Lado Esquerdo 400Mm Norflex 3051",
+        "yearStart": 1997,
+        "yearEnd": 2002,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3051"
+      }
+    ],
+    "yearRanges": [
+      [
+        1997,
+        2002
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 400,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3051.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3051.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3051",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4127",
+    "sku": "4127",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Chevrolet S10 Lado Esquerdo 420Mm Norflex 4127",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Dianteiro Chevrolet S10 Lado Esquerdo 420Mm Norflex 4127",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4127"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 420,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4127.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4127.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4127",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-3090",
+    "sku": "3090",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Ford Fiesta 2002 2014 570Mm Norflex 3090",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Flexivel De Freio Dianteiro Ford Fiesta 2002 2014 570Mm Norflex 3090",
+        "yearStart": 2002,
+        "yearEnd": 2014,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 3090"
+      }
+    ],
+    "yearRanges": [
+      [
+        2002,
+        2014
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 570,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/3090.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/3090.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-3090",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4126",
+    "sku": "4126",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Chevrolet Gm S10 Lado Direito 420Mm Norflex 4126",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Dianteiro Chevrolet Gm S10 Lado Direito 420Mm Norflex 4126",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4126"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 420,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4126.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4126.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4126",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh55131",
+    "sku": "DH55131",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Ford Fiesta Norflex Dh55131",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FORD"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Ford Fiesta Norflex Dh55131",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH55131"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh55131.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh55131.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH55131",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4128",
+    "sku": "4128",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Chevrolet Gm S10 420Mm Norflex 4128",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHEVROLET"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "Flexivel De Freio Traseiro Chevrolet Gm S10 420Mm Norflex 4128",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4128"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 420,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4128.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4128.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4128",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-8513",
+    "sku": "8513",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Dianteiro Mitsubishi L200 640Mm Norflex 8513",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "MITSUBISHI"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "MITSUBISHI",
+        "model": "Flexivel De Freio Dianteiro Mitsubishi L200 640Mm Norflex 8513",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 8513"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 640,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "DIANTEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/8513.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/8513.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-8513",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-2004",
+    "sku": "2004",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Fiat Fiorino 1988 2006 275Mm Norflex 2004",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Traseiro Fiat Fiorino 1988 2006 275Mm Norflex 2004",
+        "yearStart": 1988,
+        "yearEnd": 2006,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2004"
+      }
+    ],
+    "yearRanges": [
+      [
+        1988,
+        2006
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 275,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2004.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2004.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2004",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh11041",
+    "sku": "DH11041",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Norflex Dh11041",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Norflex Dh11041",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH11041"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh11041.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh11041.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH11041",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-2111",
+    "sku": "2111",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Fiat Fiorino 2005 2013 430Mm Norflex 2111",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "FIAT"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "FIAT",
+        "model": "Flexivel De Freio Traseiro Fiat Fiorino 2005 2013 430Mm Norflex 2111",
+        "yearStart": 2005,
+        "yearEnd": 2013,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 2111"
+      }
+    ],
+    "yearRanges": [
+      [
+        2005,
+        2013
+      ]
+    ],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 430,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/2111.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/2111.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-2111",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-dh4548",
+    "sku": "DH4548",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Pressao Da Direcao Hidraulica Norflex Dh4548",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Mangueira De Pressao Da Direcao Hidraulica Norflex Dh4548",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex DH4548"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/dh4548.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/dh4548.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-DH4548",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-nf40684",
+    "sku": "NF40684",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel Basculante De Cabine Norflex Nf40684",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel Basculante De Cabine Norflex Nf40684",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex NF40684"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/nf40684.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/nf40684.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-NF40684",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-nf40696",
+    "sku": "NF40696",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel Basculante De Cabine Norflex Nf40696",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel Basculante De Cabine Norflex Nf40696",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex NF40696"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/nf40696.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/nf40696.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-NF40696",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-9001",
+    "sku": "9001",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel De Freio Traseiro Chery Celer 180Mm Norflex 9001",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [
+      "CHERY"
+    ],
+    "models": [],
+    "applications": [
+      {
+        "make": "CHERY",
+        "model": "Flexivel De Freio Traseiro Chery Celer 180Mm Norflex 9001",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 9001"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 180,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "TRASEIRO",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/9001.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/9001.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-9001",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-nf40682",
+    "sku": "NF40682",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Flexivel Levantar Cabine Volvo Fh12Fm12 Norflex Nf40682",
+    "category": "Flexíveis de Freio Automotivo",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Flexivel Levantar Cabine Volvo Fh12Fm12 Norflex Nf40682",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex NF40682"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/nf40682.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/nf40682.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-NF40682",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
+  },
+  {
+    "id": "norflex-4549",
+    "sku": "4549",
+    "brand": "Norflex",
+    "name": "Flexível de Freio Mangueira De Retorno Da Direcao Hidraulica Norflex 4549",
+    "category": "Direção Hidráulica",
+    "subcategory": "Flexíveis",
+    "makes": [],
+    "models": [],
+    "applications": [
+      {
+        "make": "GERAL",
+        "model": "Mangueira De Retorno Da Direcao Hidraulica Norflex 4549",
+        "yearStart": null,
+        "yearEnd": null,
+        "engine": "",
+        "version": "",
+        "notes": "MercadoCar Norflex 4549"
+      }
+    ],
+    "yearRanges": [],
+    "oemEquivalents": [],
+    "specs": {
+      "lengthMm": 0,
+      "threadStandard": "Macho / Fêmea M10x1",
+      "position": "D/T",
+      "hoseType": "Borracha Sintética EPDM com Reforço Têxtil",
+      "norm": "SAE J1401 / NBR 14865"
+    },
+    "images": [
+      "/catalog-images/norflex/4549.webp"
+    ],
+    "staticImageUrls": [
+      "/catalog-images/norflex/4549.webp"
+    ],
+    "links": {
+      "directEquivalents": [],
+      "couplingCompatible": [],
+      "kitComposition": [],
+      "productVariants": []
+    },
+    "storeInventoryData": {
+      "priceCents": 3500,
+      "stockQty": 6,
+      "internalCode": "NF-4549",
+      "stockLocation": "Corredor F • Prateleira 2 • Gaveta 10"
+    },
+    "pdfPage": 1,
+    "isLaunch": false
   }
 ]
