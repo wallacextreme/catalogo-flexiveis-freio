@@ -1,6 +1,13 @@
 # 🚗 Catálogo de Flexíveis de Freio Pro (TRW & Norflex)
 ## Sistema Inteligente de Balcão Offline-First (PWA + Tauri v2 Windows Desktop)
 
+[![PWA Live Online](https://img.shields.io/badge/PWA_Live-Online-emerald?style=for-the-badge&logo=pwa)](https://wallacextreme.github.io/catalogo-flexiveis-freio/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-wallacextreme%2Fcatalogo--flexiveis--freio-blue?style=for-the-badge&logo=github)](https://github.com/wallacextreme/catalogo-flexiveis-freio)
+[![Quality Gates](https://img.shields.io/badge/Quality_Gates-9%2F9_APROVADOS-success?style=for-the-badge)](https://github.com/wallacextreme/catalogo-flexiveis-freio#--status-dos-9-quality-gates)
+
+🌐 **Acesse o PWA Online no Navegador ou Instale no Celular / PC:**  
+👉 **[https://wallacextreme.github.io/catalogo-flexiveis-freio/](https://wallacextreme.github.io/catalogo-flexiveis-freio/)**
+
 > **Padrão de Engenharia:** Conforme especificação oficial `ARQUITETURA_CATALOGOS.md` (Python XREF/SMask + Offline-First + UI-UX-PRO-MAX)  
 > **Fontes Originais:** `trw-flexiveis-para-freios.pdf` (48 páginas) + `441884238-Norflex-Catalogo-Flexivel-2019.pdf` (54 páginas)  
 > **Resultado:** **825 peças**, **746 fotos de estúdio WebP**, **1.551 vínculos cruzados**, **574 aplicações veiculares estruturadas**, busca sub-50ms (3.09ms medidos) e persistência offline-first.
