@@ -97,6 +97,97 @@ window.addEventListener('appinstalled', () => {
   renderApp();
 });
 
+// Mobile-first Filter Drawer state
+let isFilterDrawerOpen = false;
+
+function getActiveFilterCount(): number {
+  let count = 0;
+  if (filterState.brand && filterState.brand !== 'ALL') count++;
+  if (filterState.category && filterState.category !== 'ALL') count++;
+  if (filterState.make && filterState.make !== 'ALL') count++;
+  if (filterState.position && filterState.position !== 'ALL') count++;
+  if (filterState.inStockOnly) count++;
+  if (filterState.launchesOnly) count++;
+  if (filterState.sortBy && filterState.sortBy !== 'relevance') count++;
+  return count;
+}
+
+function renderActiveFilterChips(): string {
+  const chips: { label: string; key: string }[] = [];
+  if (filterState.brand && filterState.brand !== 'ALL') {
+    chips.push({ label: `Marca: ${filterState.brand}`, key: 'brand' });
+  }
+  if (filterState.category && filterState.category !== 'ALL') {
+    const catLabel = filterState.category === 'AUTOMOTIVO' ? 'Automotivo Leve' : filterState.category === 'PESADO' ? 'Linha Pesada' : filterState.category === 'MOTO' ? 'Motocicletas' : filterState.category;
+    chips.push({ label: `Linha: ${catLabel}`, key: 'category' });
+  }
+  if (filterState.make && filterState.make !== 'ALL') {
+    chips.push({ label: `Montadora: ${filterState.make}`, key: 'make' });
+  }
+  if (filterState.position && filterState.position !== 'ALL') {
+    const posLabel = filterState.position === 'DIANTEIRO' ? 'Dianteiro' : filterState.position === 'TRASEIRO' ? 'Traseiro' : 'Intermediário / Central';
+    chips.push({ label: `Posição: ${posLabel}`, key: 'position' });
+  }
+  if (filterState.inStockOnly) {
+    chips.push({ label: 'Apenas c/ Estoque', key: 'inStockOnly' });
+  }
+  if (filterState.launchesOnly) {
+    chips.push({ label: 'Apenas Lançamentos', key: 'launchesOnly' });
+  }
+  if (filterState.sortBy && filterState.sortBy !== 'relevance') {
+    const sortLabel = filterState.sortBy === 'sku' ? 'SKU A-Z' : filterState.sortBy === 'stockDesc' ? 'Maior Estoque' : filterState.sortBy === 'priceAsc' ? 'Menor Preço' : filterState.sortBy === 'lengthAsc' ? 'Comprimento' : filterState.sortBy;
+    chips.push({ label: `Ordem: ${sortLabel}`, key: 'sortBy' });
+  }
+
+  if (chips.length === 0) return '';
+
+  return `
+    <div class="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-100 dark:border-slate-800">
+      <span class="text-[11px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mr-1">Filtros Ativos:</span>
+      ${chips.map(c => `
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 border border-red-200/60 dark:border-red-900/40">
+          <span>${c.label}</span>
+          <button type="button" data-clear-chip="${c.key}" title="Remover filtro" class="hover:text-red-900 dark:hover:text-red-100 cursor-pointer p-0.5 rounded hover:bg-red-100 dark:hover:bg-red-900/50">
+            ${icon('x', 'w-3 h-3')}
+          </button>
+        </span>
+      `).join('')}
+      <button type="button" id="btn-clear-all-chips" class="text-xs text-slate-500 hover:text-red-600 dark:text-slate-400 dark:hover:text-red-400 font-semibold underline underline-offset-2 ml-1 cursor-pointer">
+        Limpar todos
+      </button>
+    </div>
+  `;
+}
+
+function renderSearchMetaHtml(searchResultsCount: number, searchDurationMs: string): string {
+  const activeCount = getActiveFilterCount();
+  return `
+    <div class="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <button
+          type="button"
+          id="btn-open-filter-drawer"
+          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold text-xs bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 transition-all cursor-pointer shadow-xs active:scale-95"
+        >
+          ${icon('filter', 'w-3.5 h-3.5 text-red-600')}
+          <span>Filtros do Balcão</span>
+          ${activeCount > 0 ? `<span class="px-1.5 py-0.2 rounded-full text-[10px] font-extrabold bg-red-600 text-white">${activeCount}</span>` : ''}
+        </button>
+        <span>Exibindo <strong>${Math.min(searchResultsCount, displayedProductsLimit)}</strong> de ${searchResultsCount} peças encontradas</span>
+        ${
+          filterState.query
+            ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${escapeHtml(filterState.query)}"</span>`
+            : ''
+        }
+      </div>
+      <div class="flex items-center gap-3">
+        <span>Latência de busca: <strong class="text-emerald-600 dark:text-emerald-400">${searchDurationMs} ms</strong></span>
+      </div>
+    </div>
+    ${renderActiveFilterChips()}
+  `;
+}
+
 // -------------------------------------------------------------
 // INITIALIZATION
 // -------------------------------------------------------------
@@ -232,6 +323,11 @@ function renderApp() {
     isCustomerMode,
     isDarkMode,
     isInstallable: !!deferredInstallPrompt,
+    activeFilterCount: getActiveFilterCount(),
+    onToggleFilterDrawer: () => {
+      isFilterDrawerOpen = !isFilterDrawerOpen;
+      renderApp();
+    },
     onSearchChange: (q) => {
       filterState.query = q;
       displayedProductsLimit = 48;
@@ -269,6 +365,12 @@ function renderApp() {
     filter: filterState,
     availableMakes,
     totalActiveCount: allProducts.length,
+    isOpen: isFilterDrawerOpen,
+    filteredCount: searchResults.length,
+    onClose: () => {
+      isFilterDrawerOpen = false;
+      renderApp();
+    },
     onFilterChange: (newFilters) => {
       filterState = { ...filterState, ...newFilters };
       displayedProductsLimit = 48;
@@ -295,8 +397,8 @@ function renderApp() {
   if (searchResults.length > 0) {
     const itemsToRender = searchResults.slice(0, displayedProductsLimit);
     productsGridHtml = `
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
-        ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {}, onStockAdjust: () => {} })).join('')}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6">
+        ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {} })).join('')}
       </div>
     `;
     if (searchResults.length > displayedProductsLimit) {
@@ -339,7 +441,6 @@ function renderApp() {
       onOpenLightbox: () => {},
       onDeleteCustomImage: () => {},
       onRemoveStaticImage: () => {},
-      onStockAdjust: () => {},
     });
   }
 
@@ -388,36 +489,22 @@ function renderApp() {
     <div class="min-h-screen flex flex-col transition-colors">
       ${navbarHtml}
 
-      <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
-        <div class="flex flex-col lg:flex-row gap-6 items-start">
-          ${sidebarHtml}
+      <main class="flex-1 max-w-screen-2xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-5">
+        <section class="w-full space-y-4">
+          <!-- Search Results Meta Bar -->
+          <div id="search-meta-container" class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-2.5">
+            ${renderSearchMetaHtml(searchResults.length, searchDurationMs)}
+          </div>
 
-          <section class="flex-1 w-full space-y-4">
-            
-            <!-- Search Results Meta Bar -->
-            <div id="search-meta-container" class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
-              <div class="flex items-center gap-2">
-                <span>Exibindo <strong>${Math.min(searchResults.length, displayedProductsLimit)}</strong> de ${searchResults.length} peças encontradas</span>
-                ${
-                  filterState.query
-                    ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${escapeHtml(filterState.query)}"</span>`
-                    : ''
-                }
-              </div>
-              <div>
-                <span>Latência de busca: <strong class="text-emerald-600 dark:text-emerald-400">${searchDurationMs} ms</strong></span>
-              </div>
-            </div>
-
-            <div id="products-grid-container">
-              ${productsGridHtml}
-            </div>
-          </section>
-        </div>
+          <div id="products-grid-container">
+            ${productsGridHtml}
+          </div>
+        </section>
       </main>
 
       <div id="toast-container" class="fixed bottom-5 right-5 z-70 pointer-events-none"></div>
 
+      ${sidebarHtml}
       ${modalHtml}
     </div>
   `;
@@ -446,19 +533,7 @@ function updateSearchListOnly() {
 
   const metaContainer = document.getElementById('search-meta-container');
   if (metaContainer) {
-    metaContainer.innerHTML = `
-      <div class="flex items-center gap-2">
-        <span>Exibindo <strong>${Math.min(searchResults.length, displayedProductsLimit)}</strong> de ${searchResults.length} peças encontradas</span>
-        ${
-          filterState.query
-            ? `<span class="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono text-[11px]">Busca: "${escapeHtml(filterState.query)}"</span>`
-            : ''
-        }
-      </div>
-      <div>
-        <span>Latência de busca: <strong class="text-emerald-600 dark:text-emerald-400">${searchDurationMs} ms</strong></span>
-      </div>
-    `;
+    metaContainer.innerHTML = renderSearchMetaHtml(searchResults.length, searchDurationMs);
   }
 
   const gridContainer = document.getElementById('products-grid-container');
@@ -466,8 +541,8 @@ function updateSearchListOnly() {
     if (searchResults.length > 0) {
       const itemsToRender = searchResults.slice(0, displayedProductsLimit);
       let html = `
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
-          ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {}, onStockAdjust: () => {} })).join('')}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6">
+          ${itemsToRender.map((item) => renderProductCard({ item, isCustomerMode, onOpenDetail: () => {} })).join('')}
         </div>
       `;
       if (searchResults.length > displayedProductsLimit) {
@@ -509,12 +584,31 @@ function setupGlobalListeners() {
     const target = e.target as HTMLElement | null;
     if (!target) return;
 
+    // Backdrop click on mobile-first filter drawer
+    if (target.id === 'filter-drawer-backdrop') {
+      isFilterDrawerOpen = false;
+      renderApp();
+      return;
+    }
+
     // Search bar shortcut "/"
-    const closestBtn = target.closest('button, [data-action], [data-filter-brand], [data-filter-category], [data-filter-position], [data-mgmt-tab], [data-thumb-index]') as HTMLElement | null;
+    const closestBtn = target.closest('button, [data-action], [data-filter-brand], [data-filter-category], [data-filter-position], [data-mgmt-tab], [data-thumb-index], [data-clear-chip]') as HTMLElement | null;
 
     if (!closestBtn) return;
 
-    // 1. Navbar Buttons
+    // 1. Navbar & Drawer Buttons
+    if (closestBtn.id === 'btn-toggle-filter-drawer' || closestBtn.id === 'btn-open-filter-drawer') {
+      isFilterDrawerOpen = !isFilterDrawerOpen;
+      renderApp();
+      return;
+    }
+
+    if (closestBtn.id === 'btn-close-filter-drawer' || closestBtn.id === 'btn-apply-filters') {
+      isFilterDrawerOpen = false;
+      renderApp();
+      return;
+    }
+
     if (closestBtn.id === 'btn-install-pwa') {
       if (deferredInstallPrompt) {
         deferredInstallPrompt.prompt();
@@ -567,6 +661,34 @@ function setupGlobalListeners() {
     }
 
     // 2. Filters
+    const clearChip = closestBtn.getAttribute('data-clear-chip');
+    if (clearChip) {
+      if (clearChip === 'brand') filterState.brand = 'ALL';
+      else if (clearChip === 'category') filterState.category = 'ALL';
+      else if (clearChip === 'make') filterState.make = 'ALL';
+      else if (clearChip === 'position') filterState.position = 'ALL';
+      else if (clearChip === 'inStockOnly') filterState.inStockOnly = false;
+      else if (clearChip === 'launchesOnly') filterState.launchesOnly = false;
+      else if (clearChip === 'sortBy') filterState.sortBy = 'relevance';
+      renderApp();
+      return;
+    }
+
+    if (closestBtn.id === 'btn-clear-all-chips') {
+      filterState = {
+        query: filterState.query,
+        brand: 'ALL',
+        category: 'ALL',
+        make: 'ALL',
+        position: 'ALL',
+        inStockOnly: false,
+        launchesOnly: false,
+        sortBy: 'relevance',
+      };
+      renderApp();
+      return;
+    }
+
     const filterBrand = closestBtn.getAttribute('data-filter-brand');
     if (filterBrand) {
       filterState.brand = filterBrand;
@@ -641,17 +763,6 @@ function setupGlobalListeners() {
       return;
     }
 
-    if (action === 'stock-inc' || action === 'stock-dec') {
-      const prodId = closestBtn.getAttribute('data-product-id');
-      if (prodId) {
-        const delta = action === 'stock-inc' ? 1 : -1;
-        await adjustStockQty(prodId, delta);
-        await refreshProductsFromDb();
-        renderApp();
-      }
-      return;
-    }
-
     // 4. Detail Modal Actions
     if (closestBtn.id === 'btn-modal-close' || closestBtn.id === 'btn-modal-close-footer') {
       activeDetailProduct = null;
@@ -694,18 +805,6 @@ function setupGlobalListeners() {
         await openProductDetail(found.id);
       } else {
         showToast(`Código ${jumpSku} não encontrado no catálogo.`);
-      }
-      return;
-    }
-
-    if (action === 'modal-stock-inc' || action === 'modal-stock-dec') {
-      if (activeDetailProduct) {
-        const delta = action === 'modal-stock-inc' ? 1 : -1;
-        const newQty = await adjustStockQty(activeDetailProduct.id, delta);
-        activeDetailProduct.storeInventoryData.stockQty = newQty;
-        const qtyEl = document.getElementById('modal-stock-qty');
-        if (qtyEl) qtyEl.textContent = String(newQty);
-        await refreshProductsFromDb();
       }
       return;
     }
@@ -938,10 +1037,13 @@ function setupGlobalListeners() {
       return;
     }
 
-    // Escape closes modals
+    // Escape closes modals and drawers
     if (e.key === 'Escape') {
       if (lightboxUrl) {
         lightboxUrl = null;
+        renderApp();
+      } else if (isFilterDrawerOpen) {
+        isFilterDrawerOpen = false;
         renderApp();
       } else if (isFormModalOpen) {
         isFormModalOpen = false;

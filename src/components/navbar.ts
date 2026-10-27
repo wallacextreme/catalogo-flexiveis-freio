@@ -8,6 +8,7 @@ export interface NavbarProps {
   isCustomerMode: boolean;
   isDarkMode: boolean;
   isInstallable?: boolean;
+  activeFilterCount?: number;
   onSearchChange: (query: string) => void;
   onToggleCustomerMode: () => void;
   onToggleDarkMode: () => void;
@@ -15,6 +16,7 @@ export interface NavbarProps {
   onOpenCreate: () => void;
   onOpenTrash: () => void;
   onInstallPwa?: () => void;
+  onToggleFilterDrawer?: () => void;
 }
 
 export function renderNavbar(props: NavbarProps): string {
@@ -26,11 +28,12 @@ export function renderNavbar(props: NavbarProps): string {
     isCustomerMode,
     isDarkMode,
     isInstallable,
+    activeFilterCount = 0,
   } = props;
 
   return `
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 gap-3 sm:gap-6">
           
           <!-- Logo & Brand Title -->
@@ -52,6 +55,22 @@ export function renderNavbar(props: NavbarProps): string {
               </p>
             </div>
           </div>
+
+          <!-- Filter Drawer Trigger Button (Hamburger) -->
+          <button
+            id="btn-toggle-filter-drawer"
+            type="button"
+            class="flex items-center gap-2 px-3 py-2 text-xs font-bold rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 transition-colors shadow-2xs shrink-0 cursor-pointer"
+            title="Abrir Menu Lateral de Filtros (Mobile First)"
+          >
+            ${icon('menu', 'w-4 h-4 text-red-600')}
+            <span class="hidden sm:inline font-heading uppercase tracking-wider text-[11px]">Filtros</span>
+            ${
+              activeFilterCount > 0
+                ? `<span class="w-5 h-5 rounded-full bg-red-600 text-white flex items-center justify-center text-[10px] font-black shadow-xs">${activeFilterCount}</span>`
+                : ''
+            }
+          </button>
 
           <!-- Global Sub-50ms Search Bar -->
           <div class="flex-1 max-w-2xl relative">

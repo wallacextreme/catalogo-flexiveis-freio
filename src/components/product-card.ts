@@ -45,7 +45,7 @@ export interface ProductCardProps {
   item: SearchMatchResult;
   isCustomerMode: boolean;
   onOpenDetail: (productId: string) => void;
-  onStockAdjust: (productId: string, delta: number) => void;
+  onStockAdjust?: (productId: string, delta: number) => void;
 }
 
 export function renderProductCard(props: ProductCardProps): string {
@@ -84,13 +84,13 @@ export function renderProductCard(props: ProductCardProps): string {
   return `
     <article
       data-product-card-id="${p.id}"
-      class="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between"
+      class="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between"
     >
       <!-- Top Card Header -->
       <div>
         <!-- Photo Container -->
         <div
-          class="relative w-full h-44 bg-white dark:bg-slate-950 flex items-center justify-center p-3 border-b border-slate-100 dark:border-slate-800/80 cursor-pointer overflow-hidden"
+          class="relative w-full h-48 sm:h-52 bg-white dark:bg-slate-950 flex items-center justify-center p-3 border-b border-slate-100 dark:border-slate-800/80 cursor-pointer overflow-hidden"
           data-action="open-detail"
           data-product-id="${p.id}"
         >
@@ -134,14 +134,14 @@ export function renderProductCard(props: ProductCardProps): string {
         </div>
 
         <!-- Body Info -->
-        <div class="p-4 space-y-3">
+        <div class="p-4 sm:p-5 space-y-3.5">
           
           <!-- SKU & Direct Links Badge -->
           <div class="flex items-start justify-between gap-2">
-            <div>
+            <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5">
                 <h3
-                  class="text-lg font-black tracking-tight text-slate-900 dark:text-white cursor-pointer hover:text-red-600 dark:hover:text-red-400 font-mono-code"
+                  class="text-lg sm:text-xl font-black tracking-tight text-slate-900 dark:text-white cursor-pointer hover:text-red-600 dark:hover:text-red-400 font-mono-code truncate"
                   data-action="open-detail"
                   data-product-id="${p.id}"
                 >
@@ -151,13 +151,13 @@ export function renderProductCard(props: ProductCardProps): string {
                   type="button"
                   data-action="copy-sku"
                   data-sku="${p.sku}"
-                  class="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded transition-colors"
+                  class="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded transition-colors shrink-0"
                   title="Copiar Código SKU"
                 >
                   ${icon('copy', 'w-3.5 h-3.5')}
                 </button>
               </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 font-medium">
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium line-clamp-2 leading-snug mt-0.5" title="${p.name}">
                 ${p.name}
               </p>
             </div>
@@ -165,7 +165,7 @@ export function renderProductCard(props: ProductCardProps): string {
             ${
               directEquivCount > 0
                 ? `
-              <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800" title="Possui equivalência direta na outra marca">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 shrink-0" title="Possui equivalência direta na outra marca">
                 ${icon('link', 'w-3 h-3')} ${directEquivCount} ${p.brand === 'TRW' ? 'Norflex' : 'TRW'}
               </span>
             `
@@ -175,13 +175,13 @@ export function renderProductCard(props: ProductCardProps): string {
 
           <!-- Position & Length Pill -->
           <div class="flex items-center gap-2 flex-wrap text-xs">
-            <span class="px-2 py-0.5 font-semibold rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            <span class="px-2.5 py-1 font-bold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 uppercase text-[11px] tracking-wide">
               ${p.specs.position || 'Dianteiro/Traseiro'}
             </span>
             ${
               p.specs.lengthMm
                 ? `
-              <span class="px-2 py-0.5 font-mono font-bold rounded bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+              <span class="px-2.5 py-1 font-mono font-extrabold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white text-xs">
                 ${p.specs.lengthMm} mm
               </span>
             `
@@ -190,22 +190,22 @@ export function renderProductCard(props: ProductCardProps): string {
           </div>
 
           <!-- Application Vehicle & OEM Code -->
-          <div class="text-xs space-y-1 pt-1 border-t border-slate-100 dark:border-slate-800/80">
-            <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300 line-clamp-1" title="${appSnippet}">
-              ${icon('car', 'w-3.5 h-3.5 text-slate-400 shrink-0')}
-              <span class="font-medium truncate">${appSnippet}</span>
+          <div class="text-xs space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800/80">
+            <div class="flex items-start gap-1.5 text-slate-700 dark:text-slate-300" title="${appSnippet}">
+              ${icon('car', 'w-4 h-4 text-slate-400 shrink-0 mt-0.5')}
+              <span class="font-medium text-xs leading-snug line-clamp-2">${appSnippet}</span>
             </div>
 
             ${
               primaryOem
                 ? `
-              <div class="flex items-center justify-between text-slate-600 dark:text-slate-400 font-mono-code text-[11px]">
+              <div class="flex items-center justify-between text-slate-600 dark:text-slate-400 font-mono-code text-[11px] pt-0.5">
                 <span class="truncate">OEM: <strong class="text-slate-800 dark:text-slate-200">${primaryOem}</strong></span>
                 <button
                   type="button"
                   data-action="copy-oem"
                   data-oem="${primaryOem}"
-                  class="text-slate-400 hover:text-red-600 p-0.5 rounded"
+                  class="text-slate-400 hover:text-red-600 p-0.5 rounded shrink-0"
                   title="Copiar OEM"
                 >
                   ${icon('copy', 'w-3 h-3')}
@@ -220,41 +220,26 @@ export function renderProductCard(props: ProductCardProps): string {
       </div>
 
       <!-- Bottom Logistics & Counter Actions -->
-      <div class="p-4 pt-0 space-y-3">
+      <div class="p-4 sm:p-5 pt-0 space-y-3">
         
-        <!-- Stock Location (Hidden in Customer Mode) -->
+        <!-- Stock Location (Locked & Read-only, No accidental clicks) -->
         ${
           !isCustomerMode
             ? `
-          <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 rounded-lg p-2 text-xs flex items-center justify-between">
-            <div class="flex items-center gap-1.5 text-amber-900 dark:text-amber-200 truncate">
-              ${icon('mapPin', 'w-3.5 h-3.5 text-amber-600 shrink-0')}
-              <span class="font-medium truncate">${inv.stockLocation || 'Corredor F'}</span>
+          <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 rounded-xl p-2.5 text-xs flex items-center justify-between gap-2 shadow-2xs">
+            <div class="flex items-center gap-1.5 text-amber-950 dark:text-amber-100 min-w-0 flex-1">
+              ${icon('mapPin', 'w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0')}
+              <span class="font-semibold text-xs truncate" title="${inv.stockLocation || 'Corredor F • Balcão'}">
+                ${inv.stockLocation || 'Corredor F • Balcão'}
+              </span>
             </div>
             
-            <!-- Quick Stock Buttons -->
-            <div class="flex items-center gap-1 shrink-0">
-              <button
-                type="button"
-                data-action="stock-dec"
-                data-product-id="${p.id}"
-                class="w-6 h-6 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-bold"
-                title="Diminuir Estoque (-1)"
-              >
-                ${icon('minus', 'w-3 h-3')}
-              </button>
-              <span class="min-w-6 text-center font-mono font-bold text-slate-900 dark:text-white text-xs">
-                ${inv.stockQty || 0}
-              </span>
-              <button
-                type="button"
-                data-action="stock-inc"
-                data-product-id="${p.id}"
-                class="w-6 h-6 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-bold"
-                title="Aumentar Estoque (+1)"
-              >
-                ${icon('plus', 'w-3 h-3')}
-              </button>
+            <!-- Read-only Stock Badge (Locked, Editable only inside Edit Modal) -->
+            <div
+              class="shrink-0 flex items-center gap-1 font-mono text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-amber-200/70 dark:bg-amber-900/70 text-amber-900 dark:text-amber-200 border border-amber-300/70 dark:border-amber-800"
+              title="Estoque protegido contra alterações acidentais. Alterações de estoque são feitas na edição da peça."
+            >
+              ${inv.stockQty ?? 0} un
             </div>
           </div>
         `
@@ -272,29 +257,30 @@ export function renderProductCard(props: ProductCardProps): string {
                 : `
               <div class="leading-tight">
                 <span class="text-[10px] text-slate-400 uppercase font-semibold block">Preço Balcão</span>
-                <span class="text-base font-extrabold text-slate-900 dark:text-white font-mono-code">${priceFormatted}</span>
+                <span class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white font-mono-code">${priceFormatted}</span>
               </div>
             `
             }
           </div>
 
           <!-- Buttons: WhatsApp & Edit/Detail -->
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-2">
             <button
               type="button"
               data-action="share-whatsapp"
               data-product-id="${p.id}"
-              class="p-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xs shadow-emerald-500/30 transition-colors"
+              class="p-2 sm:px-2.5 sm:py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xs shadow-emerald-500/30 transition-colors flex items-center gap-1.5 cursor-pointer"
               title="Copiar Ficha Técnica Formatada para WhatsApp"
             >
               ${icon('whatsapp', 'w-4 h-4')}
+              <span class="hidden sm:inline text-xs font-bold">WhatsApp</span>
             </button>
 
             <button
               type="button"
               data-action="open-detail"
               data-product-id="${p.id}"
-              class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-red-600 text-white text-xs font-bold transition-colors shadow-2xs"
+              class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-red-600 dark:bg-slate-800 dark:hover:bg-red-600 text-white text-xs font-bold transition-colors shadow-2xs cursor-pointer"
             >
               Ver Detalhes
             </button>

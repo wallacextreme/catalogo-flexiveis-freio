@@ -65,7 +65,7 @@ export interface ProductDetailModalProps {
   onOpenLightbox: (imageUrl: string) => void;
   onDeleteCustomImage: (assetId: number) => void;
   onRemoveStaticImage: (url: string) => void;
-  onStockAdjust: (delta: number) => void;
+  onStockAdjust?: (delta: number) => void;
 }
 
 export function renderProductDetailModal(props: ProductDetailModalProps): string {
@@ -273,25 +273,9 @@ export function renderProductDetailModal(props: ProductDetailModalProps): string
 
                   <div>
                     <span class="text-[11px] text-amber-700 dark:text-amber-400 font-medium block">Qtd em Estoque</span>
-                    <div class="flex items-center gap-1.5 mt-0.5">
-                      <button
-                        type="button"
-                        data-action="modal-stock-dec"
-                        class="w-6 h-6 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-bold"
-                      >
-                        ${icon('minus', 'w-3 h-3')}
-                      </button>
-                      <span id="modal-stock-qty" class="min-w-6 text-center font-mono font-bold text-sm text-slate-900 dark:text-white">
-                        ${inv.stockQty || 0}
-                      </span>
-                      <button
-                        type="button"
-                        data-action="modal-stock-inc"
-                        class="w-6 h-6 rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex items-center justify-center font-bold"
-                      >
-                        ${icon('plus', 'w-3 h-3')}
-                      </button>
-                    </div>
+                    <span id="modal-stock-qty" class="text-xs font-bold text-slate-900 dark:text-white font-mono mt-0.5 block bg-amber-100/70 dark:bg-amber-900/50 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 inline-block">
+                      ${inv.stockQty || 0} un
+                    </span>
                   </div>
                 </div>
 
