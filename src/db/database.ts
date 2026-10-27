@@ -27,51 +27,21 @@ export class BrakeHosesDatabase extends Dexie {
 
 export const db = new BrakeHosesDatabase();
 
+export const CURRENT_SEED_VERSION = 'v2_clean_makes_and_models_2026';
+
 /**
- * Initializes the database and runs instant auto-seeding if empty.
+ * Initializes the database and runs instant auto-seeding if empty or if seed version is updated.
  * Guarantees inviolable isolation of inventory data (prices, stock, locations).
  */
 export async function initDatabase(): Promise<number> {
   const count = await db.products.count();
+  const savedVersion = localStorage.getItem('catalog_seed_version');
 
-  if (count === 0) {
-    console.log('[DB] Inicializando auto-seed a partir de catalog-master-seed.json...');
-    const seedProducts = (masterSeedData as unknown as Product[]).map((p) => {
-      return {
-        ...p,
-        staticImageUrls: p.images || [],
-        imageAssetIds: [],
-        removedStaticUrls: [],
-        deletedAt: null,
-      };
-    });
-
-    // Check if we have existing inventory overrides to preserve
-    const overrides = await db.inventoryOverrides.toArray();
-    const overrideMap = new Map<string, StoreInventoryData>();
-    for (const ov of overrides) {
-      overrideMap.set(ov.productId, ov.storeInventoryData);
-    }
-
-    // Apply any existing user overrides
-    for (const p of seedProducts) {
-      if (overrideMap.has(p.id)) {
-        p.storeInventoryData = overrideMap.get(p.id)!;
-      }
-    }
-
-    await db.products.bulkAdd(seedProducts);
-    console.log(`[DB] Auto-seed concluído com ${seedProducts.length} produtos.`);
-
-    await db.auditLogs.add({
-      timestamp: Date.now(),
-      action: 'CREATE',
-      targetId: 'SYSTEM',
-      targetSku: 'ALL',
-      details: `Auto-seed inicial com ${seedProducts.length} produtos realizado com sucesso.`,
-    });
-
-    return seedProducts.length;
+  if (count === 0 || savedVersion !== CURRENT_SEED_VERSION) {
+    console.log(`[DB] Sincronizando catálogo master versão ${CURRENT_SEED_VERSION}...`);
+    const newCount = await resetToFactorySeed();
+    localStorage.setItem('catalog_seed_version', CURRENT_SEED_VERSION);
+    return newCount;
   }
 
   return count;

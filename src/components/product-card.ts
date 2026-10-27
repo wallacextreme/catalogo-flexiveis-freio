@@ -2,6 +2,45 @@ import type { Product, SearchMatchResult } from '../types/catalog.ts';
 import { icon } from './icons.ts';
 import { resolveImageUrl } from '../utils/imageUrl.ts';
 
+const CORRUPT_MAKE_MAP: Record<string, string> = {
+  'ECEHEREYESELEEERE': 'CHRYSLER',
+  'EFEIEAETE': 'FIAT',
+  'EFEOEREDE': 'FORD',
+  'ECEHEEEVEREOELEEETE': 'CHEVROLET',
+  'EGEEENEEEREAELE EMEOETEOERESE': 'CHEVROLET',
+  'GM': 'CHEVROLET',
+  'EIEVEEECEOE': 'IVECO',
+  'EMEEERECEEEDEEESE-EBEEENEZE': 'MERCEDES-BENZ',
+  'MERCEDES': 'MERCEDES-BENZ',
+  'ECEIETEREOEEENE': 'CITROËN',
+  'CITROEN': 'CITROËN',
+  'EHEOENEDEAE': 'HONDA',
+  'EKEIEAE': 'KIA',
+  'EPEEEUEGEEEOETE': 'PEUGEOT',
+  'EREEENEAEUELETE': 'RENAULT',
+  'ETEOEYEOETEAE': 'TOYOTA',
+  'EVEOELEKESEWEAEGEEENE': 'VOLKSWAGEN',
+  'VW': 'VOLKSWAGEN',
+  'FIAI': 'FIAT',
+  'FORO': 'FORD',
+};
+
+function cleanMake(raw: string): string {
+  if (!raw) return 'Geral';
+  const up = raw.toUpperCase().trim();
+  return CORRUPT_MAKE_MAP[up] || raw;
+}
+
+function cleanModel(raw: string): string {
+  if (!raw) return '';
+  let m = raw;
+  for (const bad of Object.keys(CORRUPT_MAKE_MAP)) {
+    m = m.replaceAll(bad, '');
+  }
+  m = m.replaceAll('E.E.E.E E-E E.E.E.E', '').replaceAll('E.E.E.E', '').replaceAll('E-E', '').replaceAll('... - ...', '');
+  return m.replace(/\/\//g, ' / ').trim();
+}
+
 export interface ProductCardProps {
   item: SearchMatchResult;
   isCustomerMode: boolean;
@@ -33,8 +72,8 @@ export function renderProductCard(props: ProductCardProps): string {
   // Main vehicle applications snippet
   const primaryApp = p.applications && p.applications.length > 0 ? p.applications[0] : null;
   const appSnippet = primaryApp
-    ? `${primaryApp.make} ${primaryApp.models} (${primaryApp.years})`
-    : p.makes.slice(0, 3).join(', ') || 'Aplicação Geral';
+    ? `${cleanMake(primaryApp.make)} ${cleanModel(primaryApp.models)} (${primaryApp.years})`
+    : p.makes.map(cleanMake).slice(0, 3).join(', ') || 'Aplicação Geral';
 
   // Primary OEM code
   const primaryOem = p.oemEquivalents && p.oemEquivalents.length > 0 ? p.oemEquivalents[0] : null;

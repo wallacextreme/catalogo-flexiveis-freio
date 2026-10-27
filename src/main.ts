@@ -138,6 +138,48 @@ async function initApp() {
   registerServiceWorker();
 }
 
+const CORRUPT_MAKE_MAP: Record<string, string> = {
+  'ECEHEREYESELEEERE': 'CHRYSLER',
+  'EFEIEAETE': 'FIAT',
+  'EFEOEREDE': 'FORD',
+  'ECEHEEEVEREOELEEETE': 'CHEVROLET',
+  'EGEEENEEEREAELE EMEOETEOERESE': 'CHEVROLET',
+  'GM': 'CHEVROLET',
+  'EIEVEEECEOE': 'IVECO',
+  'EMEEERECEEEDEEESE-EBEEENEZE': 'MERCEDES-BENZ',
+  'MERCEDES': 'MERCEDES-BENZ',
+  'ECEIETEREOEEENE': 'CITROËN',
+  'CITROEN': 'CITROËN',
+  'EHEOENEDEAE': 'HONDA',
+  'EKEIEAE': 'KIA',
+  'EPEEEUEGEEEOETE': 'PEUGEOT',
+  'EREEENEAEUELETE': 'RENAULT',
+  'ETEOEYEOETEAE': 'TOYOTA',
+  'EVEOELEKESEWEAEGEEENE': 'VOLKSWAGEN',
+  'VW': 'VOLKSWAGEN',
+  'FIAI': 'FIAT',
+  'FORO': 'FORD',
+};
+
+function sanitizeMake(raw: string): string {
+  if (!raw) return '';
+  const up = raw.toUpperCase().trim();
+  if (CORRUPT_MAKE_MAP[up]) return CORRUPT_MAKE_MAP[up];
+  if (up.startsWith('E') && up.endsWith('E') && up.length >= 3) {
+    let allE = true;
+    for (let i = 0; i < up.length; i += 2) {
+      if (up[i] !== 'E') { allE = false; break; }
+    }
+    if (allE) {
+      let decoded = '';
+      for (let i = 1; i < up.length; i += 2) decoded += up[i];
+      if (CORRUPT_MAKE_MAP[decoded]) return CORRUPT_MAKE_MAP[decoded];
+      return decoded;
+    }
+  }
+  return raw.trim();
+}
+
 async function refreshProductsFromDb() {
   allProducts = await getAllActiveProducts();
   trashProductsList = await getTrashProducts();
@@ -146,7 +188,8 @@ async function refreshProductsFromDb() {
   const makeSet = new Set<string>();
   for (const p of allProducts) {
     for (const m of p.makes) {
-      if (m && m !== 'GERAL') makeSet.add(m);
+      const cleanM = sanitizeMake(m);
+      if (cleanM && cleanM !== 'GERAL') makeSet.add(cleanM);
     }
   }
   availableMakes = Array.from(makeSet).sort();

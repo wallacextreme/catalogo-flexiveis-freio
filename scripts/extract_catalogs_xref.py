@@ -110,8 +110,33 @@ def parse_trw_catalog(pdf_path: Path):
             line_text = " ".join([w[4] for w in row_words])
             
             # Check if this row is a Make header
-            if len(row_words) <= 3 and not any("RPFX" in w[4] for w in row_words) and not any(c.isdigit() for c in line_text):
-                current_make = line_text.strip().replace("", "E").upper()
+            clean_hdr = line_text.strip().upper()
+            make_dict = {
+                "CHRYSLER": "CHRYSLER",
+                "CITROEN": "CITROËN",
+                "CITROËN": "CITROËN",
+                "FIAT": "FIAT",
+                "FORD": "FORD",
+                "GENERAL MOTORS": "CHEVROLET",
+                "GM": "CHEVROLET",
+                "CHEVROLET": "CHEVROLET",
+                "IVECO": "IVECO",
+                "MERCEDES": "MERCEDES-BENZ",
+                "MERCEDES-BENZ": "MERCEDES-BENZ",
+                "VOLKSWAGEN": "VOLKSWAGEN",
+                "VW": "VOLKSWAGEN",
+                "TOYOTA": "TOYOTA",
+                "HONDA": "HONDA",
+                "RENAULT": "RENAULT",
+                "PEUGEOT": "PEUGEOT",
+                "SCANIA": "SCANIA",
+                "VOLVO": "VOLVO",
+            }
+            if len(row_words) <= 3 and not any("RPFX" in w[4] for w in row_words) and not any(c.isdigit() for c in clean_hdr):
+                for mk_key, mk_val in make_dict.items():
+                    if mk_key in clean_hdr:
+                        current_make = mk_val
+                        break
                 continue
                 
             # Find RPFX word in row

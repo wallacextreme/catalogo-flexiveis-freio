@@ -2,6 +2,59 @@ import type { Product, CustomImageAsset } from '../types/catalog.ts';
 import { icon } from './icons.ts';
 import { resolveImageUrl } from '../utils/imageUrl.ts';
 
+const CORRUPT_MAKE_MAP: Record<string, string> = {
+  'ECEHEREYESELEEERE': 'CHRYSLER',
+  'EFEIEAETE': 'FIAT',
+  'EFEOEREDE': 'FORD',
+  'ECEHEEEVEREOELEEETE': 'CHEVROLET',
+  'EGEEENEEEREAELE EMEOETEOERESE': 'CHEVROLET',
+  'GM': 'CHEVROLET',
+  'EIEVEEECEOE': 'IVECO',
+  'EMEEERECEEEDEEESE-EBEEENEZE': 'MERCEDES-BENZ',
+  'MERCEDES': 'MERCEDES-BENZ',
+  'ECEIETEREOEEENE': 'CITROËN',
+  'CITROEN': 'CITROËN',
+  'EHEOENEDEAE': 'HONDA',
+  'EKEIEAE': 'KIA',
+  'EPEEEUEGEEEOETE': 'PEUGEOT',
+  'EREEENEAEUELETE': 'RENAULT',
+  'ETEOEYEOETEAE': 'TOYOTA',
+  'EVEOELEKESEWEAEGEEENE': 'VOLKSWAGEN',
+  'VW': 'VOLKSWAGEN',
+  'FIAI': 'FIAT',
+  'FORO': 'FORD',
+};
+
+function cleanMakeName(raw: string): string {
+  if (!raw) return 'Geral';
+  const up = raw.toUpperCase().trim();
+  if (CORRUPT_MAKE_MAP[up]) return CORRUPT_MAKE_MAP[up];
+  if (up.startsWith('E') && up.endsWith('E') && up.length >= 3) {
+    let allE = true;
+    for (let i = 0; i < up.length; i += 2) {
+      if (up[i] !== 'E') { allE = false; break; }
+    }
+    if (allE) {
+      let decoded = '';
+      for (let i = 1; i < up.length; i += 2) decoded += up[i];
+      if (CORRUPT_MAKE_MAP[decoded]) return CORRUPT_MAKE_MAP[decoded];
+      return decoded;
+    }
+  }
+  return raw;
+}
+
+function cleanModelName(raw: string, make: string): string {
+  if (!raw) return make ? `${make} (Geral)` : 'Geral';
+  let m = raw;
+  for (const bad of Object.keys(CORRUPT_MAKE_MAP)) {
+    m = m.replaceAll(bad, '');
+  }
+  m = m.replaceAll('E.E.E.E E-E E.E.E.E', '').replaceAll('E.E.E.E', '').replaceAll('E-E', '').replaceAll('... - ...', '');
+  m = m.replace(/\/\//g, ' / ').trim();
+  return m || `${make} (Geral)`;
+}
+
 export interface ProductDetailModalProps {
   product: Product;
   customImages: CustomImageAsset[];
@@ -457,8 +510,8 @@ export function renderProductDetailModal(props: ProductDetailModalProps): string
                       .map(
                         (app) => `
                       <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
-                        <td class="px-3 py-2 font-semibold text-slate-900 dark:text-white">${app.make}</td>
-                        <td class="px-3 py-2 text-slate-700 dark:text-slate-300">${app.models}</td>
+                        <td class="px-3 py-2 font-semibold text-slate-900 dark:text-white">${cleanMakeName(app.make)}</td>
+                        <td class="px-3 py-2 text-slate-700 dark:text-slate-300">${cleanModelName(app.models, app.make)}</td>
                         <td class="px-3 py-2 font-mono text-slate-600 dark:text-slate-400">${app.years}</td>
                         <td class="px-3 py-2 text-slate-600 dark:text-slate-400">${app.position || p.specs.position || '-'}</td>
                       </tr>
