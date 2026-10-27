@@ -198,8 +198,12 @@ async function refreshProductsFromDb() {
 function applyTheme() {
   if (isDarkMode) {
     document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.style.colorScheme = 'dark';
   } else {
     document.documentElement.classList.remove('dark');
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.style.colorScheme = 'light';
   }
 }
 
@@ -536,6 +540,7 @@ function setupGlobalListeners() {
       isDarkMode = !isDarkMode;
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
       applyTheme();
+      showToast(isDarkMode ? 'Tema Escuro ativado' : 'Tema Claro ativado');
       renderApp();
       return;
     }
