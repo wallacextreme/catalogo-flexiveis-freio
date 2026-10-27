@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/catalogo-flexiveis-freio/sw.js', { scope: '/catalogo-flexiveis-freio/' })})}
