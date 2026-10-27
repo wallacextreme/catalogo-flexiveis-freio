@@ -6,12 +6,14 @@ export interface NavbarProps {
   trashCount: number;
   isCustomerMode: boolean;
   isDarkMode: boolean;
+  isInstallable?: boolean;
   onSearchChange: (query: string) => void;
   onToggleCustomerMode: () => void;
   onToggleDarkMode: () => void;
   onOpenManagement: () => void;
   onOpenCreate: () => void;
   onOpenTrash: () => void;
+  onInstallPwa?: () => void;
 }
 
 export function renderNavbar(props: NavbarProps): string {
@@ -21,6 +23,7 @@ export function renderNavbar(props: NavbarProps): string {
     trashCount,
     isCustomerMode,
     isDarkMode,
+    isInstallable,
   } = props;
 
   return `
@@ -72,6 +75,21 @@ export function renderNavbar(props: NavbarProps): string {
           <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
             
             <!-- Customer Mode Toggle (Ocultar/Mostrar Preços) -->
+            ${
+              isInstallable
+                ? `
+            <button
+              id="btn-install-pwa"
+              type="button"
+              class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm shadow-emerald-600/30 transition-all hover:scale-[1.02] animate-pulse"
+              title="Instalar Catálogo no Dispositivo (Modo PWA Offline)"
+            >
+              ${icon('download', 'w-4 h-4')}
+              <span class="hidden sm:inline">Instalar App</span>
+            </button>
+            `
+                : ''
+            }
             <button
               id="btn-toggle-customer-mode"
               type="button"

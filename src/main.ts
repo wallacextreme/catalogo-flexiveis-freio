@@ -72,6 +72,21 @@ let lightboxZoom = 1.0;
 // Toast notification
 let toastTimeout: any = null;
 
+// PWA Install prompt state
+let deferredInstallPrompt: any = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  renderApp();
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredInstallPrompt = null;
+  showToast('Catálogo instalado com sucesso como PWA!');
+  renderApp();
+});
+
 // -------------------------------------------------------------
 // INITIALIZATION
 // -------------------------------------------------------------
@@ -152,6 +167,7 @@ function renderApp() {
     trashCount: trashProductsList.length,
     isCustomerMode,
     isDarkMode,
+    isInstallable: !!deferredInstallPrompt,
     onSearchChange: (q) => {
       filterState.query = q;
       renderApp();
@@ -345,6 +361,19 @@ function setupGlobalListeners() {
     if (!closestBtn) return;
 
     // 1. Navbar Buttons
+    if (closestBtn.id === 'btn-install-pwa') {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        const choice = await deferredInstallPrompt.userChoice;
+        if (choice && choice.outcome === 'accepted') {
+          showToast('Instalação do PWA iniciada!');
+        }
+        deferredInstallPrompt = null;
+        renderApp();
+      }
+      return;
+    }
+
     if (closestBtn.id === 'btn-toggle-customer-mode') {
       isCustomerMode = !isCustomerMode;
       localStorage.setItem('mode_cliente', String(isCustomerMode));
@@ -1011,10 +1040,16 @@ function showToast(message: string) {
 }
 
 function registerServiceWorker() {
-  if ('serviceWorker' in navigator && !window.location.hostname.includes('localhost')) {
-    navigator.serviceWorker.register('/sw.js').catch((err) => {
-      console.log('[PWA] SW register skipped in dev mode:', err);
-    });
+  if ('serviceWorker' in navigator) {
+    const swUrl = `${import.meta.env.BASE_URL}sw.js`;
+    navigator.serviceWorker
+      .register(swUrl)
+      .then((reg) => {
+        console.log('[PWA] Service Worker registrado com sucesso:', reg.scope);
+      })
+      .catch((err) => {
+        console.log('[PWA] SW registro em modo dev ou não suportado:', err.message);
+      });
   }
 }
 

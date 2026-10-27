@@ -1,5 +1,6 @@
 import type { Product, SearchMatchResult } from '../types/catalog.ts';
 import { icon } from './icons.ts';
+import { resolveImageUrl } from '../utils/imageUrl.ts';
 
 export interface ProductCardProps {
   item: SearchMatchResult;
@@ -19,7 +20,9 @@ export function renderProductCard(props: ProductCardProps): string {
     : 'bg-blue-100 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 border-blue-200 dark:border-blue-800';
 
   // Primary image
-  const primaryImg = p.images && p.images.length > 0 ? p.images[0] : '/catalog-images/norflex/placeholder.webp';
+  const rawImg = p.images && p.images.length > 0 ? p.images[0] : '/catalog-images/norflex/placeholder.webp';
+  const primaryImg = resolveImageUrl(rawImg);
+  const fallbackImg = resolveImageUrl('/catalog-images/norflex/placeholder.webp');
 
   // Formatted price
   const priceFormatted = (inv.priceCents / 100).toLocaleString('pt-BR', {
@@ -57,7 +60,7 @@ export function renderProductCard(props: ProductCardProps): string {
             alt="${p.name}"
             loading="lazy"
             class="max-h-full max-w-full object-contain filter group-hover:scale-105 transition-transform duration-300"
-            onerror="this.src='/catalog-images/norflex/placeholder.webp'"
+            onerror="this.src='${fallbackImg}'"
           />
           
           <!-- Badges overlay -->

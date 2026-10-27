@@ -1,4 +1,5 @@
 import { icon } from './icons.ts';
+import { resolveImageUrl } from '../utils/imageUrl.ts';
 
 export interface LightboxModalProps {
   imageUrl: string;
@@ -76,7 +77,7 @@ export function renderLightboxModal(props: LightboxModalProps): string {
           style="transform: scale(${zoomLevel});"
         >
           <img
-            src="${imageUrl}"
+            src="${resolveImageUrl(imageUrl)}"
             alt="Foto do Flexível de Freio em Alta Definição"
             class="max-h-[80vh] max-w-[85vw] object-contain drop-shadow-2xl rounded-lg bg-white p-4"
           />

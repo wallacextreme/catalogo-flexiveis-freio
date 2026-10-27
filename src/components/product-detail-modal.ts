@@ -1,5 +1,6 @@
 import type { Product, CustomImageAsset } from '../types/catalog.ts';
 import { icon } from './icons.ts';
+import { resolveImageUrl } from '../utils/imageUrl.ts';
 
 export interface ProductDetailModalProps {
   product: Product;
@@ -28,12 +29,12 @@ export function renderProductDetailModal(props: ProductDetailModalProps): string
   }));
 
   const allGalleryItems = [
-    ...activeStatic.map((u) => ({ id: 0, url: u, isCustom: false })),
+    ...activeStatic.map((u) => ({ id: 0, url: resolveImageUrl(u), isCustom: false })),
     ...activeCustom,
   ];
 
   if (allGalleryItems.length === 0) {
-    allGalleryItems.push({ id: 0, url: '/catalog-images/norflex/placeholder.webp', isCustom: false });
+    allGalleryItems.push({ id: 0, url: resolveImageUrl('/catalog-images/norflex/placeholder.webp'), isCustom: false });
   }
 
   const priceFormatted = (inv.priceCents / 100).toLocaleString('pt-BR', {
